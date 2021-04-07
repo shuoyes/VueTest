@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model.lazy="user" v-focus/>
+			<label v-cloak>{{tip}}</label>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript" src="js/vue.js" ></script>		
+<script>
+//	Vue.directive('focus',{//自定义指令
+//		inserted:function(el)
+//		{
+//			el.focus();
+//		}
+//	});
+//	var app = new Vue({
+//		el:'#app',
+//		data:{
+//			user:'',
+//			tip:''
+//		},
+//		methods:{
+//			checkName:function(ename){//模拟向后台提交表单
+//				var that = this;
+//				setInterval(function(){
+//					if(ename == 'admin')
+//						that.tip = '这个账号已经注册过，请更改！';
+//					else
+//						that.tip = '注册成功！';
+//				},2000);
+//				
+//			}
+//		},
+//		watch:{//事件监听
+//			user:function(val){
+//				this.checkName(val);
+//				this.tip = '正在验证...'	;
+//			}
+//		}
+//	})
+</script>

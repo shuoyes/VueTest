@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#app ul li{
+					list-style: none;
+					border: black 1px solid;
+					padding: 5px;
+					display: inline-block;
+					/*margin: -2px;*/
+					border-collapse: collapse;
+			}
+			.tabColor{
+				background-color: aqua;
+			}
+			img{
+				display: none;
+			}
+			.current{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li :key = 'item.id' v-for="(item,index) in Tabimg" v-on:click="change(index)" :class="index == currentIndex ? 'tabColor':'' ">{{item.ename}}</li>
+			</ul>
+			<div >
+				<img :key = 'item.id' v-for="(item,index) in Tabimg" :src="item.path" :class="index == currentIndex ? 'current':'' "/>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/vue.js" ></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+		currentIndex:0,
+		Tabimg:[{
+			ename:'pinkgirl',
+			path:'img/a1.jpg',
+			id:1
+		},{
+			ename:'greensky',
+			path:'img/a2.jpg',
+			id:2
+		},{
+			ename:'godnote',
+			path:'img/a3.jpg',
+			id:3
+		}]
+		},
+		methods:{
+			change:function(index){
+				this.currentIndex = index;
+			}
+		}
+	})
+</script>
